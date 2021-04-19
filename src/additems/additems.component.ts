@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {Router} from '@angular/Router';
+//import {Router} from '@angular/Router';
 import {Item} from './add-items';
 import { Mykitchen1 } from "src/kichenitemsdupli/kitchenitemsdupli";
 import{KitchenItemDupliService} from 'src/kichenitemsdupli/kitchenitem.dupliservice';
@@ -19,7 +19,7 @@ totalprice:number;
 
 items:Mykitchen1[]=[];
 item=new Item();
-  constructor(private itemservice:KitchenItemDupliService,private route:Router) { }
+  constructor(private itemservice:KitchenItemDupliService) { }
 
   ngOnInit(): void {
     this.items=this.itemservice.getItems();
@@ -38,6 +38,6 @@ onItemAdd(userForm:NgForm)
   this.items.push(a);
   console.log(a);
   alert("Item added");
-  this.route.navigate(['./view']);
+  //this.route.navigate(['./view']);
 }
 }
